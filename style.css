@@ -1,0 +1,94 @@
+html{
+    box-sizing: border-box;
+    height: 100%;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+    margin:0;
+    padding: 0;
+}
+
+body{
+    align-items: center;
+    background: linear-gradient(40deg, #eb82be, #f5e45e);
+    display: flex;
+    font-family: 'Dosis', sans-serif;
+    font-display: swap;
+    height: inherit;
+    justify-content: center;
+}
+
+.wrapper{
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+    color: #232323;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    flex-basis: 400px;
+    height: 540px;
+    padding: 20px 35px;
+}
+
+.screen{
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+    color: #232323;
+    font-size: 35px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    overflow: auto;
+    padding: 15px;
+    text-align: right;
+    width: 326px;
+}
+
+.calc-button-row{
+    display: flex;
+    justify-content: space-between;
+    margin: 5% 0;
+}
+
+.calc-button{
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(24, 23, 23, 0.1);
+    border-radius: 16px;
+    box-shadow:  0 4px 30px rgba(35, 35, 35, 0.1);
+    flex-basis: 20%;
+    font-family: inherit;
+    font-size: 24px;
+    height: 65px;
+}
+
+.calc-button:last-child{
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background: rgba(198, 195, 196, 0.75);
+    border: 1px solid rgba(24, 23, 23, 0.1);
+    border-radius: 16px;
+    box-shadow:  0 4px 30px rgba(35, 35, 35, 0.1);
+}
+
+.calc-button:hover{
+    background: inherit;
+}
+
+.calc-button:active{
+    background: #faf2b6;
+}
+
+.double{
+    flex-basis: 47%;
+}
+
+.triple{
+    flex-basis:73%
+}
