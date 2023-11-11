@@ -5,7 +5,7 @@ let prevOperator;
 const screen = document.querySelector('.screen');
 
 function buttonClick(value){
-    if(isNaN(value)){
+    if(isNaN(value)&&value!='.'){
         handleSymbol(value);
     }
     else{
@@ -24,7 +24,7 @@ function handleSymbol(symbol){
             if (prevOperator === null){
                 return
             }
-            flushOperation(parseInt(buffer));
+            flushOperation(parseFloat(buffer));
             prevOperator = null;
             buffer = running;
             running = 0;
@@ -50,12 +50,12 @@ function handleMath(symbol){
     if (buffer==='0'){
         return;
     }
-    const intBuffer = parseInt(buffer);
+    const floatBuffer = parseFloat(buffer);
     if (running===0){
-        running=intBuffer;
+        running=floatBuffer;
     }
     else{
-        flushOperation(intBuffer)
+        flushOperation(floatBuffer)
     }
     prevOperator=symbol;
     buffer='0';
@@ -75,7 +75,13 @@ function flushOperation(intBuffer){
 
 function handleNumber(numberString){
     if(buffer==='0'){
-        buffer=numberString;
+        if(numberString==="."){
+            buffer+=numberString;
+        }
+        else{
+            buffer=numberString;
+        }
+       
     }else{
         buffer+=numberString;
     }
