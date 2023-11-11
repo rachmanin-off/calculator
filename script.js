@@ -71,6 +71,9 @@ function flushOperation(intBuffer){
     }else if(prevOperator==='÷'){
         running /= intBuffer;
     }
+    running=parseFloat(running.toPrecision(12));
+    // my solution for floating point number error
+    // cut off with toPrecision and then convert into float again
 }
 
 function handleNumber(numberString){
